@@ -21,4 +21,4 @@ name = st.selectbox("Select a member:", df['Name'])
 if name:
     member = df[df['Name'] == name].iloc[0]
     st.text_input("Contact", member['Contact'] if pd.notna(member['Contact']) else "", disabled=True)
-    st.text_input("Number", member['Number'] if pd.notna(member['Number']) else "", disabled=True)
+    st.text_input("Number", f"{member['Number']}" if pd.notna(member['Number']) else "", disabled=True)
